@@ -1,0 +1,14 @@
+tclsh
+puts [open "flash:test.tcl" w+] {
+
+# PING SCRIPT
+foreach address {
+10.0.0.100
+10.0.0.101
+10.0.0.10
+} {ping $address repeat 3 size 1500}
+}
+tclquit
+
+more test.txt
+tclsh test.tcl
